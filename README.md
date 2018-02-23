@@ -1,49 +1,8 @@
-# README
-
-# Ruby on Rails Tutorial sample application
-
-This is the sample application for
-[*Ruby on Rails Tutorial:
-Learn Web Development with Rails*](http://www.railstutorial.org/)
-by [Michael Hartl](http://www.michaelhartl.com/).
-
-## License
-
-All source code in the [Ruby on Rails Tutorial](http://railstutorial.org/)
-is available jointly under the MIT License and the Beerware License. See
-[LICENSE.md](LICENSE.md) for details.
-
-## Getting started
-
-To get started with the app, clone the repo and then install the needed gems:
-
-```
-$ bundle install --without production
-```
-
-Next, migrate the database:
-
-```
-$ rails db:migrate
-```
-
-Finally, run the test suite to verify that everything is working correctly:
-
-```
-$ rails test
-```
-
-If the test suite passes, you'll be ready to run the app in a local server:
-
-```
-$ rails server
-```
-
-For more information, see the
-[*Ruby on Rails Tutorial* book](http://www.railstutorial.# Learn_Enough_Ruby
-# Learn_Enough_Ruby
-# Learn_Enough_Ruby
-# Learn_Enough_Ruby
-# Sample_App
-# Project
-# Project
+I created a sample application where users can post microposts and follow users using Ruby on Rails. Here are a few points about this application:
+- Controllers: Users controller, Sessions controller, Microposts controller,  and Relationship controllers. 
+- In each of these controllers, I used the CRUD HTTP operations for GET, POST, PUT, DELETE by the RESTful API resource for showing, creating, updating or deleting users, microposts, and relationships with users. 
+- Users, microposts, and relationships have corresponding models which detail the association between models as well as validation rules. For example users have many microposts, many followers, and many relationships; microposts belong to a user, and users can follow other users and be followed by other users. 
+-  I set up an authentication system so that users can sign up and then sign in (sessions). Instead of using devise, I practiced implementing authentication without devise. The user model includes the logic for validating users and ensuring safety of passwords. The sessions controller creates new sessions when users log in and destroys the sessions when logged out. 
+- Each of the controllers has corresponding views. In the users views (edit, index, new, show), I remove duplicated code by refactoring the new.html.erb and edit.html.erb views to instead use the partial I created(_form.html.erb). 
+- I wrote automated tests to automate the testing of the sign up form, the login in functionality, and to test for successful and unsuccessful edits of users. 
+- I used bootstrap (gem for ruby) to style the front-end, most notably the navbar on the home page and sign up form (custom.scss)
